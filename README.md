@@ -31,6 +31,7 @@ Teams
 * team has_many developer_teams
 
 DeveloperTeams
+
 | name | type | option |
 |:-:|:-:|:-:|
 | id | integer | not null, auto_incremental, primary key |
