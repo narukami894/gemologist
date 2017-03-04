@@ -1,7 +1,68 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+49.times do |i|
+  Developer.create!(
+    name: Forgery('name').full_name,
+    github_account: 'http://example.com/',
+    role: rand(2),
+    email: Forgery('email').address,
+    password: "hogehoge#{i + 1}",
+    sign_in_count: (i + 1).to_s,
+    confirmed_at: Date.today,
+    created_at: Date.today,
+    updated_at: Date.today
+  )
+end
+
+Developer.create!(
+  name: '社長',
+  github_account: 'http://example.com/',
+  role: 2,
+  email: 'hoge@hoge',
+  password: 'hogehoge',
+  sign_in_count: 1,
+  confirmed_at: Date.today,
+  created_at: Date.today,
+  updated_at: Date.today
+)
+
+10.times do |i|
+  Team.create!(
+    name: Forgery('lorem_ipsum').word,
+    created_at: Date.today,
+    updated_at: Date.today
+  )
+end
+
+10.times do |i|
+  DeveloperTeam.create!(
+    developer_id: (i + 1).to_s,
+    team_id: 1
+  )
+end
+
+10.times do |i|
+  DeveloperTeam.create!(
+    developer_id: (i + 11).to_s,
+    team_id: 2
+  )
+end
+
+10.times do |i|
+  DeveloperTeam.create!(
+    developer_id: (i + 21).to_s,
+    team_id: 3
+  )
+end
+
+10.times do |i|
+  DeveloperTeam.create!(
+    developer_id: (i + 31).to_s,
+    team_id: 4
+  )
+end
+
+10.times do |i|
+  DeveloperTeam.create!(
+    developer_id: (i + 41).to_s,
+    team_id: 5
+  )
+end

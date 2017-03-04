@@ -22,6 +22,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'forgery'
   gem 'listen', '~> 3.0.5'
   gem 'pry-rails'
   gem 'rubocop', require: false
