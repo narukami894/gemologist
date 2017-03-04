@@ -15,6 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # add
 gem 'devise'
+gem 'forgery'
 gem 'less-rails'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
@@ -24,7 +25,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'forgery'
   gem 'listen', '~> 3.0.5'
   gem 'pry-rails'
   gem 'rubocop', require: false
