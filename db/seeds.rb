@@ -33,6 +33,16 @@ Developer.create!(
 end
 
 10.times do |i|
+  Project.create!(
+    name: Forgery('lorem_ipsum').word,
+    description: Forgery('lorem_ipsum').paragraph,
+    team_id: (i + 1).to_s,
+    created_at: Date.today,
+    updated_at: Date.today
+  )
+end
+
+10.times do |i|
   DeveloperTeam.create!(
     developer_id: (i + 1).to_s,
     team_id: 1
@@ -64,16 +74,6 @@ end
   DeveloperTeam.create!(
     developer_id: (i + 41).to_s,
     team_id: 5
-  )
-end
-
-10.times do |i|
-  Project.create!(
-    name: Forgery('lorem_ipsum').word,
-    description: Forgery('lorem_ipsum').paragraph,
-    team_id: (i + 1).to_s,
-    created_at: Date.today,
-    updated_at: Date.today
   )
 end
 
