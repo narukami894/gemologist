@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170304024558) do
+ActiveRecord::Schema.define(version: 20170304054340) do
 
   create_table "developer_teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "developer_id"
@@ -45,6 +45,33 @@ ActiveRecord::Schema.define(version: 20170304024558) do
     t.index ["reset_password_token"], name: "index_developers_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "gem_suggestions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "sentence",     limit: 65535, null: false
+    t.integer  "developer_id"
+    t.integer  "gemfile_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["developer_id"], name: "index_gem_suggestions_on_developer_id", using: :btree
+    t.index ["gemfile_id"], name: "index_gem_suggestions_on_gemfile_id", using: :btree
+  end
+
+  create_table "gemfiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "context",    limit: 65535
+    t.integer  "project_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["project_id"], name: "index_gemfiles_on_project_id", using: :btree
+  end
+
+  create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                      null: false
+    t.text     "description", limit: 65535
+    t.integer  "team_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["team_id"], name: "index_projects_on_team_id", using: :btree
+  end
+
   create_table "teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
@@ -53,4 +80,8 @@ ActiveRecord::Schema.define(version: 20170304024558) do
 
   add_foreign_key "developer_teams", "developers"
   add_foreign_key "developer_teams", "teams"
+  add_foreign_key "gem_suggestions", "developers"
+  add_foreign_key "gem_suggestions", "gemfiles"
+  add_foreign_key "gemfiles", "projects"
+  add_foreign_key "projects", "teams"
 end
