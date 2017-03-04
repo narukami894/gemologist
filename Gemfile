@@ -15,7 +15,9 @@ gem 'uglifier', '>= 1.3.0'
 
 # add
 gem 'devise'
-
+gem 'less-rails'
+gem 'therubyracer'
+gem 'twitter-bootstrap-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
