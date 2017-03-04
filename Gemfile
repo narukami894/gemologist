@@ -19,7 +19,6 @@ gem 'less-rails'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 
-
 group :development, :test do
   gem 'byebug', platform: :mri
 end

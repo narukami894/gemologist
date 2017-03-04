@@ -24,7 +24,7 @@ Developer.create!(
   updated_at: Date.today
 )
 
-10.times do |i|
+10.times do |_i|
   Team.create!(
     name: Forgery('lorem_ipsum').word,
     created_at: Date.today,
