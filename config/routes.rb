@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
   devise_for :developers
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :teams do
+    resource :project, except: :destroy do
+      resource :gemfile, only: %i(show edit update) do
+        resources :suggestions, only: %i(index create destroy update)
+      end
+    end
+  end
 end
