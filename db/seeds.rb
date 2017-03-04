@@ -66,3 +66,60 @@ end
     team_id: 5
   )
 end
+
+10.times do |i|
+  Project.create!(
+    name: Forgery('lorem_ipsum').word,
+    description: Forgery('lorem_ipsum').paragraph,
+    team_id: (i + 1).to_s,
+    created_at: Date.today,
+    updated_at: Date.today
+  )
+end
+
+10.times do |i|
+  Gemfile.create!(
+    context: 'hoge',
+    project_id: (i + 1).to_s
+  )
+end
+
+10.times do |i|
+  GemSuggestion.create!(
+    sentence: 'Fakerはいいぞ',
+    developer_id: (i + 1).to_s,
+    gemfile_id: 1
+  )
+end
+
+10.times do |i|
+  GemSuggestion.create!(
+    sentence: 'Fakerはいいぞ',
+    developer_id: (i + 11).to_s,
+    gemfile_id: 2
+  )
+end
+
+10.times do |i|
+  GemSuggestion.create!(
+    sentence: 'Fakerはいいぞ',
+    developer_id: (i + 21).to_s,
+    gemfile_id: 3
+  )
+end
+
+10.times do |i|
+  GemSuggestion.create!(
+    sentence: 'Fakerはいいぞ',
+    developer_id: (i + 31).to_s,
+    gemfile_id: 4
+  )
+end
+
+10.times do |i|
+  GemSuggestion.create!(
+    sentence: 'Fakerはいいぞ',
+    developer_id: (i + 41).to_s,
+    gemfile_id: 5
+  )
+end
