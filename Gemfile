@@ -17,6 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'forgery'
 gem 'less-rails'
+gem 'omniauth'
+gem 'omniauth-github'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 
