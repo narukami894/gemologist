@@ -54,5 +54,4 @@ Devise.setup do |config|
 
   # config.router_name = :my_engine
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-
 end
