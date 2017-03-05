@@ -8,7 +8,8 @@
     sign_in_count: (i + 1).to_s,
     confirmed_at: Date.today,
     created_at: Date.today,
-    updated_at: Date.today
+    updated_at: Date.today,
+    image: 'hoge.png'
   )
 end
 
@@ -21,7 +22,8 @@ Developer.create!(
   sign_in_count: 1,
   confirmed_at: Date.today,
   created_at: Date.today,
-  updated_at: Date.today
+  updated_at: Date.today,
+  image: 'hoge.png'
 )
 
 10.times do |_i|
