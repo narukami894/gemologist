@@ -55,6 +55,4 @@ Devise.setup do |config|
   # config.router_name = :my_engine
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  require 'omniauth-github'
-  config.omniauth :github, 'ccc0ff6726ad4db91617', 'e58d152dd7eb9315bf0d34e7baac34e39df3cde0', scope: 'user:email'
 end
