@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :teams do
     resource :project, except: :destroy do
       resource :gemfile, only: %i(show edit update) do
-        resources :suggestions, only: %i(index create destroy update)
+        resources :gem_suggestions, only: %i(index create destroy update)
       end
     end
   end
