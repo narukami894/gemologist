@@ -18,7 +18,7 @@
   <div class="form-group">
     <%= f.label :context, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :context, :class => 'form-control' %>
+      <%= f.text_area :context, :class => 'form-control', row: 50 %>
 
     </div>
     <%=f.error_span(:context) %>
@@ -31,7 +31,3 @@
   </div>
 
 <% end %>
-
-
-
-      <%= html @gemfile.context %>
