@@ -18,5 +18,4 @@ class GemfilesController < ApplicationController
   def gemfile_params
     params.require(:gemfile).permit(:context)
   end
-
 end

@@ -14,8 +14,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier', '>= 1.3.0'
 
 # add
+gem 'carrierwave'
 gem 'coderay'
 gem 'devise'
+gem 'dotenv-rails'
+gem 'fog'
 gem 'forgery'
 gem 'less-rails'
 gem 'omniauth'
